@@ -1,0 +1,127 @@
+\documentclass{article}
+\usepackage[sorting=none]{biblatex}
+\bibliography{mybib}
+\usepackage{kafkanotes}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{gensymb}
+\newtheorem{theorem}{Theorem}
+\newtheorem*{motivation}{Motivation}
+\newtheorem*{definition}{Definition}
+
+%Judul dan Penulis
+\title{Origami 101}
+\author{University of Toronto, Thursdays 3-5pm, Winter 2025}
+
+\begin{document}
+
+%Halaman Judul
+\begin{titlepage}
+\thispagestyle{empty}
+\maketitle
+
+%Abstrak
+\begin{abstract}
+We will study different topics in mathematics via origami. Some of them are related to origami itself as the object of study and others are going to use origami as their inspiration.
+\end{abstract}
+
+\tableofcontents
+\end{titlepage}
+
+%Geometri untuk halaman konten
+\newgeometry{top=20mm,bottom=25mm,right=80mm,left=20mm}
+
+%================KONTEN DIMULAI DISINI================%
+
+\section{Week 3: January 23rd Meeting}
+
+\subsection{Motivation \& Paper Folding}
+
+\begin{motivation}
+Given a piece of paper \& a fold, is the fold flat?
+\end{motivation}
+\begin{marginfigure}%
+  \includegraphics[width=\linewidth]{Images/creaseandfold}
+  \caption{Flat fold and its respective unfolded crease pattern}
+  \label{fig:marginfig}
+\end{marginfigure}
+Suppose I show you an unfolded crease pattern (Figure 1). Are there criterias to decide whether it constructs something or not? \\
+
+\subsection{Flat-Foldability \& Restrictions}
+
+\textbf{Local Restrictions (Necessary)}: What happens around the interior vertices?
+\\~\\
+\textbf{Global Restrictions (Sufficient)}: Satisfying all local restrictions what remains? i.e. Paper crashing into itself, in Figure 2 having a colour along a column or row of an orthogonal crease pattern is a global restriction
+\begin{marginfigure}%
+  \includegraphics[width=\linewidth]{Images/crease}
+  \caption{Non-rthogonal \& orthogonal crease pattern, blue = mountain crease, red = valley crease}
+  \label{fig:marginfig}
+\end{marginfigure}
+\begin{definition}
+If a vertex satisfies all local restrictions it is called \textit{locally flat-foldable}
+\end{definition}
+\begin{definition}
+If the entire system satisfies all global restrictions it is called \textit{globally flat-foldable}
+\end{definition}
+\noindent Thus, if a crease pattern is locally \& globally flat-foldable the entire system is foldable.
+
+\subsection{Vertex Neighborhoods}
+
+Each interior vertex has a neighborhood in which it is isolated. See Figure 3.
+\begin{marginfigure}%
+  \includegraphics[width=\linewidth]{Images/vertex}
+  \caption{Isolated vertex angles \& its flat folded construction from creases $P_1,...,P_4$}
+  \label{fig:marginfig}
+\end{marginfigure}
+
+\subsection{Local Condition Theorems}
+Refer to Figure 4 for isolated local vertices.
+\begin{theorem}[Maekawa]
+|Mountain - Valley| = 2
+\end{theorem}
+\begin{theorem}[Justin-Kawasaki]
+In a flat foldable vertex, $\theta_1+\theta_3+...=\theta_2+\theta_4+...=180^{\circ}$
+\end{theorem}
+\noindent Also Justin-Kawasaki's theorem also turns out to be general for Riemannian manifolds, see Figure 4
+\begin{marginfigure}%
+  \includegraphics[width=\linewidth]{Images/riemannfold}
+  \caption{Folding a sphere}
+  \label{fig:marginfig}
+\end{marginfigure}
+
+\section{Week 2: January 16th Meeting}
+This week was on geometries to motivate an application to origami criterions coming in the following weeks.
+\subsection{Geometries}
+\begin{theorem}
+Gauss's Theorema Egregium "Remarkable Theorem" concerns the curvature of surfaces (i.e. Gaussian curvature is a local isometric invariant)
+\end{theorem}
+\noindent
+In classical geometry we have the following Euclid's axioms,
+\begin{enumerate}
+\item To draw a straight line from any point to any point.
+\item Through any point \& with any point as radius there is a circle.
+\item All right angles are equal to each other.
+\item You can extend a finite straight line continuously in a straight line indefinitely.
+\item Through any point not in a lines there is a unique parallel to the line through the point.
+\end{enumerate}
+Figure 5 show a Gauss map N and its derivative.
+\begin{marginfigure}%
+  \includegraphics[width=\linewidth]{Images/gaussmap}
+  \caption{Gauss map N and its derivative dN}
+  \label{fig:marginfig}
+\end{marginfigure}
+\begin{theorem}[Gauss-Bonnet]
+\[\int_{S}K(t)dt=2\pi X(S)\]
+Where $K(t)$ is the Gaussian curvature and $X(S)$ is the Euler characteristic $v-\epsilon +f$ (vertices-edges+faces) which is equal to 2 for a sphere and 0 for a torus
+\end{theorem}
+\newpage
+\newgeometry{top=20mm,bottom=25mm,right=20mm,left=20mm}
+\nocite{1}
+\nocite{2}
+\nocite{3}
+\nocite{4}
+\nocite{5}
+\nocite{6}
+\printbibliography
+
+\end{document}
